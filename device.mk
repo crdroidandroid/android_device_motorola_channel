@@ -514,7 +514,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++_vendor \
     libgui_vendor:32 \
-    vndk_package
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v32/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \

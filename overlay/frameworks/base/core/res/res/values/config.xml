@@ -74,7 +74,11 @@
     <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
+    <bool name="config_intrusiveNotificationLed">false</bool>
+
+    <bool name="config_intrusiveBatteryLed">false</bool>
+
+    <bool name="config_multiColorBatteryLed">false</bool>
 
     <!-- Whether device needs to wait for Qualcomm MPCTL service to start
          before setting power profiles on boot. -->

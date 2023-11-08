@@ -345,6 +345,7 @@ vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
+lib64/libqdMetaData.system.so:system/lib64/libqdMetaData.system.so
 
 # Graphics - Scalar
 vendor/lib/libscalar.so

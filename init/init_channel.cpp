@@ -113,3 +113,85 @@ void vendor_load_properties()
 
     vendor_load_device_properties();
 }
+
+#include <vector>
+
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
+#include <android-base/properties.h>
+#include <android-base/logging.h>
+#include <init/DeviceLibinit.h>
+
+#include "property_service.h"
+#include "vendor_init.h"
+
+using android::base::GetProperty;
+using android::base::SetProperty;
+
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "odm.",
+    "product.",
+    "system.",
+    "system_ext.",
+    "vendor.",
+};
+
+void property_override_device(char const prop[], char const value[], bool add = true)
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else if (add)
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
+
+void vendor_load_device_properties()
+{
+    std::string bootsku;
+    std::string device;
+
+    const auto set_ro_build_prop = [](const std::string &source,
+            const std::string &prop, const std::string &value) {
+        auto prop_name = "ro." + source + "build." + prop;
+        property_override_device(prop_name.c_str(), value.c_str(), false);
+    };
+
+    const auto set_ro_product_prop = [](const std::string &source,
+            const std::string &prop, const std::string &value) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override_device(prop_name.c_str(), value.c_str(), false);
+    };
+
+    bootsku = GetProperty("ro.boot.hardware.sku", "");
+    if (bootsku == "XT1952-T") {
+        /* T-Mobile REVVLRY */
+        property_override_device("ro.build.description", "channel_revvl-user 10 QPY30.85-18 6572f release-keys");
+        property_override_device("persist.vendor.radio.customer_mbns", "tmo_usa_ims_default.mbn;sprint_usa_ims.mbn");
+        property_override_device("persist.vendor.radio.data_con_rprt", "1");
+        property_override_device("persist.vendor.ims.playout_delay", "10");
+        property_override_device("persist.vendor.ims.cam_sensor_delay", "20");
+        property_override_device("persist.vendor.ims.display_delay", "40");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/channel_revvl/channel:10/QPY30.85-18/6572f:user/release-keys");
+            set_ro_product_prop(source, "device", "channel");
+            set_ro_product_prop(source, "model", "REVVLRY");
+            set_ro_product_prop(source, "name", "channel_revvl");
+        }
+    } else {
+        /* moto g(7) play */
+        property_override_device("ro.build.description", "channel_retail-user 10 QPYS30.85-23-8-2 c00f57 release-keys");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/channel_retail/channel:10/QPYS30.85-23-8-2/c00f57:user/release-keys");
+            set_ro_product_prop(source, "device", "channel");
+            set_ro_product_prop(source, "model", "moto g(7) play");
+        }
+    }
+
+    device = GetProperty("ro.product.device", "");
+    LOG(ERROR) << "Found bootsku '" << bootsku.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
+}

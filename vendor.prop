@@ -98,9 +98,6 @@ ro.vendor.fm.use_audio_session=true
 # HEH filename encryption is being dropped
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# OEM Unlock reporting
-ro.oem_unlock_supported=1
-
 # OMX
 # Rank OMX SW codecs lower than OMX HW codecs
 debug.stagefright.omx_default_rank.sw-audio=1
@@ -194,7 +191,7 @@ renderthread.skia.reduceopstasksplitting=true
 
 # SOC
 ro.soc.manufacturer=Qualcomm
-ro.soc.model=SDM450
+ro.soc.model=SDM632
 
 # SurfaceFlinger
 debug.sf.early_phase_offset_ns=1500000
@@ -233,3 +230,37 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Audio
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/common/Bluetooth_cal.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/common/General_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/common/Global_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/common/Handset_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/common/Hdmi_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/common/Headset_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/common/Speaker_cal.acdb
+
+# Bluetooth
+bluetooth.device.default_name=moto g(7) play
+
+# Sensors
+ro.hardware.sensors=channel
+ro.vendor.sensors.amd=false
+ro.vendor.sensors.facing=false
+ro.vendor.sensors.glance_approach=false
+ro.vendor.sensors.glance_cover_to_wake=false
+ro.vendor.sensors.mot_detect=true
+ro.vendor.sensors.mot_ltv=true
+ro.vendor.sensors.pedometer=false
+ro.vendor.sensors.pmd=false
+ro.vendor.sensors.rmd=false
+ro.vendor.sensors.scrn_ortn=false
+ro.vendor.sensors.smd=false
+ro.vendor.sensors.sta_detect=true
+ro.vendor.sdk.sensors.gestures=false
+
+# Camera
+persist.vendor.camera.expose.aux=1
+
+# Cutout
+ro.support_hide_display_cutout=true

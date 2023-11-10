@@ -13,17 +13,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-
-motorola_sdm632_init_library_static {
-    name: "libinit_sdm632",
+cc_library_static {
+    name: "libinit_channel",
     recovery_available: true,
     srcs: [
-        "init_sdm632.cpp",
+        "init_channel.cpp",
         "DeviceLibinit.cpp"
     ],
     include_dirs: [
         "system/core/init",
-        "device/motorola/sdm632-common"
+        "device/motorola/channel",
+        "system/libbase/include",
     ],
     shared_libs: [
         "libbase",

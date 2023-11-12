@@ -11,3 +11,9 @@ persist.vendor.dpm.feature=0
 DEVICE_PROVISIONED=1
 ril.subscription.types=RUIM
 telephony.lteOnCdmaDevice=1
+
+# App launch prefetching (IORapd)
+ro.iorapd.enable=false
+iorapd.perfetto.enable=false
+iorapd.readahead.enable=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false

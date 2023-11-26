@@ -71,14 +71,10 @@ vendor.vidc.disable.split.mode=1
 # Codec2 switch
 debug.media.codec2=2
 
-# Color Mode
-vendor.display.enable_default_color_mode=1
-
 # Dex
 pm.dexopt.shared=quicken
 
 # Display
-ro.sf.hwc_set_default_colormode=true
 debug.renderengine.backend=skiaglthreaded
 debug.sf.hw=1
 debug.sf.latch_unsignaled=0
@@ -104,24 +100,8 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
-# LMKD/PSI
-ro.lmk.use_psi=true
-ro.lmk.low=1001
-ro.lmk.medium=800
-ro.lmk.critical=0
-ro.lmk.critical_upgrade=true
-ro.lmk.upgrade_pressure=40
-ro.lmk.downgrade_pressure=60
-ro.lmk.kill_heaviest_task=false
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-
-# Play store
-ro.com.google.clientidbase.am=android-motorola
-ro.com.google.clientidbase.gmm=android-motorola
-ro.com.google.clientidbase.ms=android-motorola
-ro.com.google.clientidbase.yt=android-motorola
 
 # Keymaster 4.0 - TDES support
 ro.hardware.keystore_desede=true
@@ -155,9 +135,6 @@ persist.vendor.cne.rat.wlan.chip.oem=WCN
 persist.vendor.sys.cnd.iwlan=1
 persist.vendor.data.mode=concurrent
 persist.data.netmgrd.qos.enable=true
-persist.radio.fi_supported=1
-persist.data.qmi.adb_logmask=0
-persist.radio.adb_log_on=0
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.aosp_usr_pref_sel=true
@@ -176,19 +153,7 @@ ro.telephony.default_network=10,10
 ro.vendor.telephony.default_network=10,10
 ro.vendor.use_data_netmgrd=true
 ro.telephony.iwlan_operation_mode=legacy
-persist.vendor.ims.dropset_feature=0
-persist.vendor.ims.disableDebugLogs=0
-persist.vendor.ims.disableIMSLogs=0
-persist.vendor.ims.disableDebugDataPathLogs=0
-persist.vendor.ims.disableADBLogs=0
-persist.vendor.ims.vt.enableadb=1
-persist.vendor.ims.disableQXDMLogs=1
-persist.vendor.qti.telephony.vt_cam_interface=2
 ro.vendor.build.vendorprefix=/vendor
-
-# Skia
-# (b/183612348): Enable skia reduceOpsTaskSplitting
-renderthread.skia.reduceopstasksplitting=true
 
 # SOC
 ro.soc.manufacturer=Qualcomm
@@ -207,16 +172,10 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.use_color_management=true
 
-# Time daemon
-persist.timed.enable=true
-
 # USB
 vendor.usb.rmnet.func.name=rmnet_bam
 vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=rndis_bam
-
-# Voice assistant
-ro.opa.eligible_device=true
 
 # Watchdog
 ro.hw_timeout_multiplier=3
@@ -262,6 +221,3 @@ ro.vendor.sdk.sensors.gestures=false
 
 # Camera
 persist.vendor.camera.expose.aux=1
-
-# Cutout
-ro.support_hide_display_cutout=true

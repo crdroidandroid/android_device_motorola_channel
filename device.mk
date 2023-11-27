@@ -542,3 +542,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
+
+# AudioFX
+TARGET_EXCLUDES_AUDIOFX := true

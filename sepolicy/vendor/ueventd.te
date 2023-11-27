@@ -4,3 +4,5 @@ allow ueventd debugfs_wakeup_sources:file getattr;
 allow ueventd debugfs:dir relabelfrom;
 allow ueventd metadata_file:dir search;
 allow ueventd self:capability sys_nice;
+allow ueventd debugfs_rmts:dir { relabelto };
+allow ueventd ueventd:capability { kill };

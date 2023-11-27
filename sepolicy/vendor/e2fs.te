@@ -1,0 +1,2 @@
+allow e2fs e2fs:capability { kill };
+allow e2fs sysfs:file { getattr };

@@ -167,6 +167,10 @@ PRODUCT_PACKAGES += \
     libvulkan \
     libtinyxml
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
@@ -491,7 +495,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti \
+    android.hardware.usb@1.0-service \
     init.qcom.usb.rc \
     init.qcom.usb.sh
 

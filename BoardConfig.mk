@@ -256,7 +256,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 ENABLE_VENDOR_RIL_SERVICE := true
-CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom

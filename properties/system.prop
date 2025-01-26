@@ -1,11 +1,20 @@
 # Audio
 use.voice.path.for.pcm.voip=false
 
+# Cutout
+ro.support_hide_display_cutout=true
+
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Moto
 ro.mot.build.customerid=retail
+
+# Play store
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
 
 # Radio
 persist.radio.aosp_usr_pref_sel=true
@@ -15,3 +24,9 @@ persist.vendor.dpm.feature=0
 DEVICE_PROVISIONED=1
 ril.subscription.types=RUIM
 telephony.lteOnCdmaDevice=1
+
+# Time daemon
+persist.timed.enable=true
+
+# Voice assistant
+ro.opa.eligible_device=true

@@ -3,3 +3,4 @@ ro.charger.enable_suspend=true
 
 # Radio
 ro.telephony.block_binder_thread_on_incoming_calls=false
+persist.vendor.qti.telephony.vt_cam_interface=2

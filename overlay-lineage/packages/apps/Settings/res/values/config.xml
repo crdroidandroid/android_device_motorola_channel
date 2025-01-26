@@ -1,0 +1,7 @@
+<resources>
+    <!-- Show battery Design Capacity -->
+    <bool name="config_show_battery_design_capacity">false</bool>
+
+    <!-- Show battery Maximum Capacity -->
+    <bool name="config_show_battery_maximum_capacity">false</bool>
+</resources>
